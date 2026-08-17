@@ -14,7 +14,7 @@ import (
 func Load(path string) (model.Config, error) {
 	data, err := os.ReadFile(path)
 	if err != nil {
-		return model.Config{}, fmt.Errorf("读取配置文件 %q 失败: %v", path, err)
+		return model.Config{}, fmt.Errorf("读取配置文件 %q 失败: %w", path, err)
 	}
 	return Parse(data)
 }
